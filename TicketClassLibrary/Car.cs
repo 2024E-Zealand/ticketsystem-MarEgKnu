@@ -1,31 +1,31 @@
-﻿namespace TicketClassLibrary
+﻿
+namespace TicketClassLibrary
 {
     /// <summary>
     /// This class represents a car object
     /// </summary>
-    public class Car
+    public class Car : Vehicle
     {
         /// <summary>
-        /// Represents the licence plate for the car
+        /// Constructor for a car object, must provide a valid licence number and date
         /// </summary>
-        public string LicencePlate { get; set; }
+        /// <param name="licencePlate">The licence number of the car</param>
+        /// <param name="date"></param>
+        public Car(string licencePlate, DateTime date) : base(licencePlate, date)
+        {
+        }
         /// <summary>
-        /// 
+        /// Default constructor for a car object, will give the car some predetermined default values
         /// </summary>
-        public DateTime Date { get; set; }
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <returns></returns>
-        public double Price()
+        public Car() : base("AA12345", new DateTime(2000, 1, 1))
+        {
+        }
+
+        public override double Price()
         {
             return 240;
         }
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <returns></returns>
-        public string VehicleType()
+        public override string VehicleType()
         {
             return "Car";
         }

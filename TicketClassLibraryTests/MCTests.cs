@@ -13,7 +13,7 @@ namespace TicketClassLibraryTests
         [TestMethod()]
         public void PriceTest_Returns125()
         {
-            MC mc = new MC();
+            Vehicle mc = new MC();
             double expected = 125;
             double actual = mc.Price();
             Assert.AreEqual(expected, actual);
@@ -22,7 +22,7 @@ namespace TicketClassLibraryTests
         [TestMethod()]
         public void VehicleTypeTest_ReturnsMC()
         {
-            MC mc = new MC();
+            Vehicle mc = new MC();
             string expected = "MC";
             string actual = mc.VehicleType();
             Assert.AreEqual(expected, actual);

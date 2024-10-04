@@ -7,18 +7,30 @@ using System.Threading.Tasks;
 namespace TicketClassLibrary
 {
     /// <summary>
-    /// 
+    /// This class represents a MC vehicle object
     /// </summary>
-    public class MC
+    public class MC : Vehicle
     {
-        public string LicencePlate { get; set; }
-        public DateTime Date {  get; set; }
+        /// <summary>
+        /// Constructor for a MC object, must provide a valid licence number and date
+        /// </summary>
+        /// <param name="licencePlate">The licence number of the MC</param>
+        /// <param name="date"></param>
+        public MC(string licencePlate, DateTime date) : base(licencePlate, date)
+        {
+        }
+        /// <summary>
+        /// Default constructor for a MC object, will give the MC some predetermined default values
+        /// </summary>
+        public MC() : base("AA12345", new DateTime(2000, 1, 1))
+        {
+        }
 
-        public double Price()
+        public override double Price()
         {
             return 125;
         }
-        public string VehicleType()
+        public override string VehicleType()
         {
             return "MC";
         }

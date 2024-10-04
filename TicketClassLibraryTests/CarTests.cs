@@ -14,7 +14,7 @@ namespace TicketClassLibrary.Tests
         [TestMethod()]
         public void PriceTest_Returns240()
         {
-            Car car = new Car();
+            Vehicle car = new Car();
             double expected = 240;
             double actual = car.Price();
             Assert.AreEqual(expected, actual);
@@ -23,7 +23,7 @@ namespace TicketClassLibrary.Tests
         [TestMethod()]
         public void VehicleTypeTest_ReturnsCar()
         {
-            Car car = new Car();
+            Vehicle car = new Car();
             string expected = "Car";
             string actual = car.VehicleType();
             Assert.AreEqual(expected, actual);
