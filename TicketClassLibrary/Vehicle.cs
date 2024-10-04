@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TicketClassLibrary.Helpers;
 
 namespace TicketClassLibrary
 {
@@ -15,6 +16,7 @@ namespace TicketClassLibrary
         /// <param name="date"></param>
         protected Vehicle(string licencePlate, DateTime date)
         {
+            LicencePlateValidator.ValidateLicencePlate(licencePlate);
             LicencePlate = licencePlate;
             Date = date;
         }
