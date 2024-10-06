@@ -7,4 +7,10 @@
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Reference Include="TicketClassLibrary">
+      <HintPath>extern dll\TicketClassLibrary.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>

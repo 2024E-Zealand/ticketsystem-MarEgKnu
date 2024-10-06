@@ -12,12 +12,20 @@ namespace TicketClassLibrary.Tests
     public class CarTests
     {
         [TestMethod()]
-        public void PriceTest_Returns240()
+        public void PriceTest_Returns240_NoDiscount()
         {
             Vehicle car = new Car();
             double expected = 240;
             double actual = car.Price();
             Assert.AreEqual(expected, actual);
+        }
+        [TestMethod()]
+        public void PriceTest_Returns228_WithBroBizz()
+        {
+            Vehicle car = new Car("AB12345", DateTime.Now, true);
+            double expected = 228;
+            double actual = car.Price();
+            Assert.AreEqual(expected, actual, 0.01);
         }
 
         [TestMethod()]

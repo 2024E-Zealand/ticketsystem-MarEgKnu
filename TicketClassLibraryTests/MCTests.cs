@@ -11,12 +11,20 @@ namespace TicketClassLibraryTests
     public class MCTests
     {
         [TestMethod()]
-        public void PriceTest_Returns125()
+        public void PriceTest_Returns125_NoDiscount()
         {
             Vehicle mc = new MC();
             double expected = 125;
             double actual = mc.Price();
             Assert.AreEqual(expected, actual);
+        }
+        [TestMethod()]
+        public void PriceTest_Returns118_WithBroBizz()
+        {
+            Vehicle mc = new MC("AB12345", DateTime.Now, true);
+            double expected = 118.75;
+            double actual = mc.Price();
+            Assert.AreEqual(expected, actual, 0.01);
         }
 
         [TestMethod()]
