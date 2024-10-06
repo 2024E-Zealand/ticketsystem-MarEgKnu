@@ -9,19 +9,21 @@ namespace StoreBaeltTicketLibraryTests
 {
     public class TicketRepository : ITicketRepository
     {
+        private static List<Vehicle> _tickets = new List<Vehicle>();
+        /// <inheritdoc/>
         public void AddTicket(Vehicle ticket)
         {
-            throw new NotImplementedException();
+            _tickets.Add(ticket);
         }
-
+        /// <inheritdoc/>
         public List<Vehicle> GetAllTickets()
         {
-            throw new NotImplementedException();
+            return _tickets;
         }
-
+        /// <inheritdoc/>
         public List<Vehicle> GetByLicenceNumber(string licenceNum)
         {
-            throw new NotImplementedException();
+            return _tickets.FindAll(t => t.LicencePlate == licenceNum);
         }
     }
 }
